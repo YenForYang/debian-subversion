@@ -1,0 +1,4 @@
+misc:Depends=
+misc:Pre-Depends=
+perl:Depends=perl (>= 5.28.1-1), perlapi-5.28.1
+shlibs:Depends=intel-comp-ps-ss-bec-19.0.1-144, libapr1 (>= 1.2.7), libc6 (>= 2.14), libgcc1 (>= 1:3.0), libsvn1 (>= 1.11.0-1)

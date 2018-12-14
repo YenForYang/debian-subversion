@@ -1,0 +1,12 @@
+Package: libsvn-java-dbgsym
+Source: subversion
+Version: 1.11.0-1
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: James McCoy <jamessan@debian.org>
+Installed-Size: 1670
+Depends: libsvn-java (= 1.11.0-1)
+Section: debug
+Priority: optional
+Description: debug symbols for libsvn-java
+Build-Ids: 643e35a55cc27d7b9251de2f7924c8b44567668b

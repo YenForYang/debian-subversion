@@ -1,0 +1,13 @@
+Package: ruby-svn-dbgsym
+Source: subversion
+Version: 1.11.0-1
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: James McCoy <jamessan@debian.org>
+Installed-Size: 2713
+Depends: ruby-svn (= 1.11.0-1)
+Section: debug
+Priority: optional
+Multi-Arch: same
+Description: debug symbols for ruby-svn
+Build-Ids: 00a942446b184badd51a9ff5e389861fea6a97fc 11df79090956dc0ff1e9d43d33ac67f3f9e86e40 13907b6eda07d7e66c51aa90de0fe75a2d616430 232818b0639b84c3e1dd1197e79a5418aeefe723 697465725f206e9ca96c280679928c47ea4d4c13 969376b029063441fe494b0329d00e087be4057f afbbbbafc746a9a1ffa2616c3b7febe6e83266d9 c18757511087d8120d41df3b5659f47465782867 f1852e3e7b5913d364b6aa429dea04d3707f9575

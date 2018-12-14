@@ -1,0 +1,21 @@
+From: James McCoy <jamessan@debian.org>
+Date: Wed, 1 Aug 2018 20:44:36 -0400
+Subject: workaround_EINVAL_on_kfreebsd
+
+---
+ subversion/bindings/swig/ruby/test/util.rb | 2 ++
+ 1 file changed, 2 insertions(+)
+
+Index: subversion-1.11.0/subversion/bindings/swig/ruby/test/util.rb
+===================================================================
+--- subversion-1.11.0.orig/subversion/bindings/swig/ruby/test/util.rb
++++ subversion-1.11.0/subversion/bindings/swig/ruby/test/util.rb
+@@ -371,6 +371,8 @@ exit 1
+ 	TCPSocket.new(@svnserve_host, port).close
+       rescue Errno::ECONNREFUSED
+ 	sleep(n < 10 ? 0.2 : 0.5)
++      rescue Errno::EINVAL
++	sleep(n < 10 ? 0.2 : 0.5)
+       else
+ 	return true
+       end

@@ -1,0 +1,37 @@
+#!/bin/sh
+set -ex
+
+cd ${ADTTMP:-$AUTOPKGTEST_TMP}
+REPO=$(pwd)/repo
+WC=$(pwd)/wc
+PID=$(pwd)/pid
+
+svnadmin create "$REPO"
+cat > "$REPO"/conf/svnserve.conf <<EOF
+[general]
+anon-access = read
+auth-access = write
+password-db = passwd
+realm = Test Repo
+EOF
+cat > "$REPO"/conf/passwd <<EOF
+[users]
+user = password
+EOF
+
+trap 'kill $(cat "$PID")' EXIT
+svnserve --pid-file "$PID" -r "$REPO" -d
+
+svn checkout --non-interactive svn://localhost/ "$WC"
+
+cd "$WC"
+echo 'Hello, world!' > hello
+svn add hello
+if svn commit --non-interactive -mdep8; then
+  echo 'Anonymous commit unexpectedly worked' >&2
+fi
+svn commit --non-interactive --username user --password password -mdep8
+
+result=$(svn cat --non-interactive svn://localhost/hello)
+
+test "$result" = "Hello, world!"

@@ -1,0 +1,3 @@
+misc:Depends=
+misc:Pre-Depends=
+shlibs:Depends=libapr1 (>= 1.5.0), libaprutil1 (>= 1.3.2+dfsg), libc6 (>= 2.14), libgcc1 (>= 1:3.0), libsvn1 (>= 1), libsvn1 (>= 1.11.0-1)

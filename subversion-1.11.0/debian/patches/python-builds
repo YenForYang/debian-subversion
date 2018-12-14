@@ -1,0 +1,132 @@
+From: James McCoy <jamessan@debian.org>
+Date: Wed, 1 Aug 2018 20:44:36 -0400
+Subject: python-builds
+
+Build for multiple python versions.  Patch from Matthias Klose
+<doko@debian.org> via Ubuntu.  Mostly, rename libsvn_swig_py to
+libsvn_swig_py2.x.
+
+Submitted upstream: http://svn.haxx.se/dev/archive-2008-05/0361.shtml
+---
+ Makefile.in             |  1 +
+ build.conf              | 18 +++++++++---------
+ build/ac-macros/swig.m4 |  4 +++-
+ 3 files changed, 13 insertions(+), 10 deletions(-)
+
+diff --git a/Makefile.in b/Makefile.in
+index f874f7d..d4a83ea 100644
+--- a/Makefile.in
++++ b/Makefile.in
+@@ -144,6 +144,7 @@ GOOGLEMOCK_INCLUDES = -I@GOOGLEMOCK_SRCDIR@/googlemock/include -I@GOOGLEMOCK_SRC
+ GOOGLEMOCK_LIB_INCLUDES = -I@GOOGLEMOCK_SRCDIR@/googlemock -I@GOOGLEMOCK_SRCDIR@/googletest $(GOOGLEMOCK_INCLUDES)
+ 
+ SWIG = @SWIG@
++PYTHON_INCLUDES = @PYTHON_INCLUDES@
+ SWIG_PY_INCLUDES = @SWIG_PY_INCLUDES@ -I$(SWIG_SRC_DIR)/python/libsvn_swig_py
+ SWIG_PY_COMPILE = @SWIG_PY_COMPILE@
+ SWIG_PY_LINK = @SWIG_PY_LINK@
+diff --git a/build.conf b/build.conf
+index 31b8060..2434c4c 100644
+--- a/build.conf
++++ b/build.conf
+@@ -494,7 +494,7 @@ external-project = svn_locale
+ type = swig
+ path = subversion/bindings/swig
+ sources = core.i
+-libs = libsvn_swig_py libsvn_swig_perl libsvn_swig_ruby
++libs = libsvn_swig_py$(PYVER) libsvn_swig_perl libsvn_swig_ruby
+        libsvn_diff libsvn_subr apr
+ description = Subversion core library bindings
+ 
+@@ -502,7 +502,7 @@ description = Subversion core library bindings
+ type = swig
+ path = subversion/bindings/swig
+ sources = svn_client.i
+-libs = libsvn_swig_py libsvn_swig_perl libsvn_swig_ruby
++libs = libsvn_swig_py$(PYVER) libsvn_swig_perl libsvn_swig_ruby
+        libsvn_client libsvn_subr apr
+ nonlibs = swig_core
+ description = Subversion client library bindings
+@@ -511,7 +511,7 @@ description = Subversion client library bindings
+ type = swig
+ path = subversion/bindings/swig
+ sources = svn_delta.i
+-libs = libsvn_swig_py libsvn_swig_perl libsvn_swig_ruby
++libs = libsvn_swig_py$(PYVER) libsvn_swig_perl libsvn_swig_ruby
+        libsvn_delta libsvn_subr apr
+ nonlibs = swig_core
+ description = Subversion delta library bindings
+@@ -520,7 +520,7 @@ description = Subversion delta library bindings
+ type = swig
+ path = subversion/bindings/swig
+ sources = svn_diff.i
+-libs = libsvn_swig_py libsvn_swig_perl libsvn_swig_ruby
++libs = libsvn_swig_py$(PYVER) libsvn_swig_perl libsvn_swig_ruby
+        libsvn_diff libsvn_subr apr
+ nonlibs = swig_core
+ description = Subversion diff library bindings
+@@ -529,7 +529,7 @@ description = Subversion diff library bindings
+ type = swig
+ path = subversion/bindings/swig
+ sources = svn_fs.i
+-libs = libsvn_swig_py libsvn_swig_perl libsvn_swig_ruby
++libs = libsvn_swig_py$(PYVER) libsvn_swig_perl libsvn_swig_ruby
+        libsvn_fs libsvn_subr apr
+ nonlibs = swig_core
+ description = Subversion FS library bindings
+@@ -538,7 +538,7 @@ description = Subversion FS library bindings
+ type = swig
+ path = subversion/bindings/swig
+ sources = svn_ra.i
+-libs = libsvn_swig_py libsvn_swig_perl libsvn_swig_ruby
++libs = libsvn_swig_py$(PYVER) libsvn_swig_perl libsvn_swig_ruby
+        libsvn_ra libsvn_subr apr
+ nonlibs = swig_core
+ description = Subversion RA library bindings
+@@ -547,7 +547,7 @@ description = Subversion RA library bindings
+ type = swig
+ path = subversion/bindings/swig
+ sources = svn_repos.i
+-libs = libsvn_swig_py libsvn_swig_perl libsvn_swig_ruby
++libs = libsvn_swig_py$(PYVER) libsvn_swig_perl libsvn_swig_ruby
+        libsvn_repos libsvn_subr apr
+ nonlibs = swig_core
+ description = Subversion repository library bindings
+@@ -556,13 +556,13 @@ description = Subversion repository library bindings
+ type = swig
+ path = subversion/bindings/swig
+ sources = svn_wc.i
+-libs = libsvn_swig_py libsvn_swig_perl libsvn_swig_ruby
++libs = libsvn_swig_py$(PYVER) libsvn_swig_perl libsvn_swig_ruby
+        libsvn_wc libsvn_subr apr
+ nonlibs = swig_core
+ description = Subversion WC library bindings
+ 
+ # SWIG utility library for Python modules
+-[libsvn_swig_py]
++[libsvn_swig_py$(PYVER)]
+ type = swig_lib
+ lang = python
+ path = subversion/bindings/swig/python/libsvn_swig_py
+diff --git a/build/ac-macros/swig.m4 b/build/ac-macros/swig.m4
+index 8119d65..f590175 100644
+--- a/build/ac-macros/swig.m4
++++ b/build/ac-macros/swig.m4
+@@ -108,7 +108,8 @@ AC_DEFUN(SVN_FIND_SWIG,
+     AC_CACHE_CHECK([for Python includes], [ac_cv_python_includes],[
+       ac_cv_python_includes="`$PYTHON ${abs_srcdir}/build/get-py-info.py --includes`"
+     ])
+-    SWIG_PY_INCLUDES="\$(SWIG_INCLUDES) $ac_cv_python_includes"
++    PYTHON_INCLUDES="$ac_cv_python_includes"
++    SWIG_PY_INCLUDES="\$(SWIG_INCLUDES) \$(PYTHON_INCLUDES)"
+ 
+     if test "$ac_cv_python_includes" = "none"; then
+       AC_MSG_WARN([python bindings cannot be built without distutils module])
+@@ -296,6 +297,7 @@ int main()
+       AC_MSG_RESULT([$SWIG_RB_TEST_VERBOSE])
+   fi
+   AC_SUBST(SWIG)
++  AC_SUBST(PYTHON_INCLUDES)
+   AC_SUBST(SWIG_PY_INCLUDES)
+   AC_SUBST(SWIG_PY_COMPILE)
+   AC_SUBST(SWIG_PY_LINK)

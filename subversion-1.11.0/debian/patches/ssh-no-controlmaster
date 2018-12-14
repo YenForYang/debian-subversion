@@ -1,0 +1,51 @@
+From: James McCoy <jamessan@debian.org>
+Date: Wed, 1 Aug 2018 20:44:36 -0400
+Subject: ssh-no-controlmaster
+
+Bug #413102: Avoid accidentally becoming an ssh ControlMaster.
+Bug #413102: Avoid accidentally becoming an ssh ControlMaster.
+
+If you set ControlMaster via your ssh config:
+.ssh/config:
+Host *
+    ControlMaster auto
+    Controlpath ~/.ssh/master-%r@%h:%p
+
+you can get 'svn: Can't write to connection: Broken pipe' with certain
+ssh commands, because svn can open multiple ssh sessions and kill them
+at unpredictable times.
+
+I don't really think the problem is either svn's or openssh's fault,
+but this is the obvious way to avoid it.  We will still use ssh
+connection sharing, but only if a ControlMaster is already present.
+---
+ subversion/libsvn_ra_svn/client.c    | 2 +-
+ subversion/libsvn_subr/config_file.c | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/subversion/libsvn_ra_svn/client.c b/subversion/libsvn_ra_svn/client.c
+index ab1aa58..164cc76 100644
+--- a/subversion/libsvn_ra_svn/client.c
++++ b/subversion/libsvn_ra_svn/client.c
+@@ -399,7 +399,7 @@ static svn_error_t *find_tunnel_agent(const char *tunnel,
+        * versions have it too. If the user is using some other ssh
+        * implementation that doesn't accept it, they can override it
+        * in the [tunnels] section of the config. */
+-      val = "$SVN_SSH ssh -q --";
++      val = "$SVN_SSH ssh -q -o ControlMaster=no --";
+     }
+ 
+   if (!val || !*val)
+diff --git a/subversion/libsvn_subr/config_file.c b/subversion/libsvn_subr/config_file.c
+index bd2ec82..5014de6 100644
+--- a/subversion/libsvn_subr/config_file.c
++++ b/subversion/libsvn_subr/config_file.c
+@@ -1449,7 +1449,7 @@ svn_config_ensure(const char *config_dir, apr_pool_t *pool)
+         "### passed to the tunnel agent as <user>@<hostname>.)  If the"      NL
+         "### built-in ssh scheme were not predefined, it could be defined"   NL
+         "### as:"                                                            NL
+-        "# ssh = $SVN_SSH ssh -q --"                                         NL
++        "# ssh = $SVN_SSH ssh -q -o ControlMaster=no --"                     NL
+         "### If you wanted to define a new 'rsh' scheme, to be used with"    NL
+         "### 'svn+rsh:' URLs, you could do so as follows:"                   NL
+         "# rsh = rsh --"                                                     NL

@@ -1,0 +1,77 @@
+From: James McCoy <jamessan@debian.org>
+Date: Wed, 1 Aug 2018 20:44:35 -0400
+Subject: build-fixes
+
+Fix some build problems:
+Fix some build problems:
+
+- Add aprutil as a direct dependency for libsvn_client and libsvn_ra.
+---
+ Makefile.in | 8 +++-----
+ build.conf  | 6 +++---
+ 2 files changed, 6 insertions(+), 8 deletions(-)
+
+diff --git a/Makefile.in b/Makefile.in
+index f4c6e61..cbed2cc 100644
+--- a/Makefile.in
++++ b/Makefile.in
+@@ -900,8 +900,7 @@ clean-swig-pl:
+ 	fi
+ 	for d in $(SWIG_PL_DIR)/libsvn_swig_perl; \
+ 	do \
+-	  cd $$d; \
+-	  rm -rf *.lo *.la *.o .libs; \
++	  (cd $$d && rm -rf *.lo *.la *.o .libs); \
+ 	done
+ 	if [ -f "$(SWIG_PL_DIR)/native/Makefile" ]; then \
+ 	  cd $(SWIG_PL_DIR)/native; $(MAKE) clean; \
+@@ -935,7 +934,7 @@ clean-swig-py:
+ 	fi
+ 	for d in $(SWIG_PY_DIR) $(SWIG_PY_DIR)/libsvn_swig_py; \
+ 	do \
+-	  cd $$d && rm -rf *.lo *.la *.o *.pyc .libs; \
++	  (cd $$d && rm -rf *.lo *.la *.o *.pyc .libs); \
+ 	done
+ 	find $(SWIG_PY_SRC_DIR) $(SWIG_PY_DIR) -name "*.pyc" -exec rm {} ';'
+ 
+@@ -967,8 +966,7 @@ clean-swig-rb:
+ 	fi
+ 	for d in $(SWIG_RB_DIR) $(SWIG_RB_DIR)/libsvn_swig_ruby; \
+ 	do \
+-	  cd $$d; \
+-	  rm -rf *.lo *.la *.o .libs; \
++	  (cd $$d && rm -rf *.lo *.la *.o .libs); \
+ 	done
+ 
+ extraclean-swig-rb: clean-swig-rb
+diff --git a/build.conf b/build.conf
+index 8f01622..22bfebb 100644
+--- a/build.conf
++++ b/build.conf
+@@ -186,7 +186,7 @@ path = subversion/svnserve
+ install = bin
+ manpages = subversion/svnserve/svnserve.8 subversion/svnserve/svnserve.conf.5
+ libs = libsvn_repos libsvn_fs libsvn_delta libsvn_subr libsvn_ra_svn
+-       apriconv apr sasl
++       aprutil apriconv apr sasl
+ msvc-libs = advapi32.lib ws2_32.lib
+ 
+ [svnsync]
+@@ -243,7 +243,7 @@ link-cmd = $(LINK_CXX_LIB)
+ description = Subversion Client Library
+ type = lib
+ path = subversion/libsvn_client
+-libs = libsvn_wc libsvn_ra libsvn_delta libsvn_diff libsvn_subr apriconv apr
++libs = libsvn_wc libsvn_ra libsvn_delta libsvn_diff libsvn_subr aprutil apriconv apr
+ install = lib
+ msvc-export = svn_client.h private/svn_client_mtcc.h private/svn_client_private.h
+ 
+@@ -320,7 +320,7 @@ msvc-export = private/svn_fs_util.h
+ description = Subversion General Repository Access Library
+ type = lib
+ path = subversion/libsvn_ra
+-libs = libsvn_delta libsvn_subr ra-libs apriconv apr
++libs = libsvn_delta libsvn_subr ra-libs aprutil apriconv apr
+ # conditionally add more dependencies
+ add-deps = $(SVN_RA_LIB_DEPS)
+ add-install-deps = $(SVN_RA_LIB_INSTALL_DEPS)

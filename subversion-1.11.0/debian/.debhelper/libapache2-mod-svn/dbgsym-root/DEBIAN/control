@@ -1,0 +1,12 @@
+Package: libapache2-mod-svn-dbgsym
+Source: subversion
+Version: 1.11.0-1
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: James McCoy <jamessan@debian.org>
+Installed-Size: 230
+Depends: libapache2-mod-svn (= 1.11.0-1)
+Section: debug
+Priority: optional
+Description: debug symbols for libapache2-mod-svn
+Build-Ids: 03a8170e4b723810a8293e949c5cbcb66491841e a8ba2fd8e351d83a3a87f0d20e12fed0d07ef216

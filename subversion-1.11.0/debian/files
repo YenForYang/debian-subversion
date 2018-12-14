@@ -1,0 +1,18 @@
+libapache2-mod-svn-dbgsym_1.11.0-1_amd64.deb debug optional automatic=yes
+libapache2-mod-svn_1.11.0-1_amd64.deb httpd optional
+libsvn-dev_1.11.0-1_amd64.deb libdevel optional
+libsvn-doc_1.11.0-1_all.deb doc optional
+libsvn-java-dbgsym_1.11.0-1_amd64.deb debug optional automatic=yes
+libsvn-java_1.11.0-1_amd64.deb java optional
+libsvn-perl-dbgsym_1.11.0-1_amd64.deb debug optional automatic=yes
+libsvn-perl_1.11.0-1_amd64.deb perl optional
+libsvn1-dbgsym_1.11.0-1_amd64.deb debug optional automatic=yes
+libsvn1_1.11.0-1_amd64.deb libs optional
+python-subversion-dbgsym_1.11.0-1_amd64.deb debug optional automatic=yes
+python-subversion_1.11.0-1_amd64.deb python optional
+ruby-svn-dbgsym_1.11.0-1_amd64.deb debug optional automatic=yes
+ruby-svn_1.11.0-1_amd64.deb ruby optional
+subversion-dbgsym_1.11.0-1_amd64.deb debug optional automatic=yes
+subversion-tools-dbgsym_1.11.0-1_amd64.deb debug optional automatic=yes
+subversion-tools_1.11.0-1_amd64.deb vcs optional
+subversion_1.11.0-1_amd64.deb vcs optional

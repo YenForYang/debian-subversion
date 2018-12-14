@@ -1,0 +1,12 @@
+{
+    "driver_name" : "icc",
+    "options" : [ "-I/home/richard/debs/svn/subversion-1.11.0/subversion/include", "-I./subversion", "-I/usr/include/apr-1.0", "-I/usr/include/apr-1.0", "-I/usr/include", "-I/usr/include/libsecret-1", "-I/usr/include/glib-2.0", "-I/usr/lib/x86_64-linux-gnu/glib-2.0/include", "-I/usr/include/dbus-1.0", "-I/usr/lib/x86_64-linux-gnu/dbus-1.0/include", "-I/usr/include/x86_64-linux-gnu/qt5/QtDBus", "-I/usr/include/x86_64-linux-gnu/qt5", "-I/usr/include/x86_64-linux-gnu/qt5/QtGui", "-I/usr/include/x86_64-linux-gnu/qt5", "-I/usr/include/x86_64-linux-gnu/qt5/QtCore", "-I/usr/include/x86_64-linux-gnu/qt5", "-I/usr/include/KF5/KWallet", "-I/usr/include/KF5/KCoreAddons", "-I/usr/include/KF5/KI18n", "-I/usr/include", "-I/usr/include/serf-1", "-march=native", "-parallel", "-inline-level=2", "-qemit-build-options", "-qemit-messages", "-multiple-processes=8", "-qoverride-limits", "-falign-loops", "-falign-functions", "-qopt-matmul", "-qopt-mem-layout-trans", "-fpermissive", "-ipo-jobs4", "-Wl,--as-needed,--gc-sections,--print-memory-usage,--relax,--stats", "-ffunction-sections", "-fdata-sections", "-diag-disable=10148,10006,10121,11021", "-par-schedule-auto", "-ipo", "-std=c90", "-Wdate-time", "-D_FORTIFY_SOURCE=2", "-DLINUX", "-D_REENTRANT", "-D_GNU_SOURCE", "-DQT_DBUS_LIB", "-DQT_GUI_LIB", "-DQT_CORE_LIB", "-DSVN_SQLITE_MIN_VERSION_NUMBER=3008007", "-DSVN_SQLITE_MIN_VERSION="3.8.7"", "-g", "-O2", "-fdebug-prefix-map=/home/richard/debs/svn/subversion-1.11.0=.", "-fstack-protector-strong", "-Wformat", "-Werror=format-security", "-march=native", "-pipe", "-pthread", "-g", "-O2", "-fdebug-prefix-map=/home/richard/debs/svn/subversion-1.11.0=.", "-fstack-protector-strong", "-Wformat", "-Werror=format-security", "-march=native", "-pipe", "-pthread", "-c", "-fPIC", "-DPIC", "-o", "subversion/libsvn_subr/.libs/mutex.o" ],
+    "objects" : [
+        {
+            "object_name" : "subversion/libsvn_subr/.libs/mutex.o",
+            "source_name" : "/home/richard/debs/svn/subversion-1.11.0/subversion/libsvn_subr/mutex.c",
+            "start_time" : "2018-12-02T23:45:59Z",
+            "end_time" : "2018-12-02T23:46:00Z"
+        }
+    ]
+}

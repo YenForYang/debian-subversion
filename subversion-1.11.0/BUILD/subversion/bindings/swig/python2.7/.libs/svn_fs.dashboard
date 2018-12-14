@@ -1,0 +1,12 @@
+{
+    "driver_name" : "icc",
+    "options" : [ "-I/home/richard/debs/svn/subversion-1.11.0/BUILD/subversion", "-I/home/richard/debs/svn/subversion-1.11.0/subversion/include", "-I/home/richard/debs/svn/subversion-1.11.0/subversion/bindings/swig", "-I/home/richard/debs/svn/subversion-1.11.0/subversion/bindings/swig/include", "-I/home/richard/debs/svn/subversion-1.11.0/subversion/bindings/swig/proxy", "-I/home/richard/debs/svn/subversion-1.11.0/BUILD/subversion/bindings/swig/proxy", "-I/usr/include/apr-1.0", "-I/usr/include/apr-1.0", "-I/usr/include", "-I/usr/include/python2.7", "-I/home/richard/debs/svn/subversion-1.11.0/subversion/bindings/swig/python/libsvn_swig_py", "-march=native", "-parallel", "-inline-level=2", "-qemit-build-options", "-qemit-messages", "-multiple-processes=8", "-qoverride-limits", "-falign-loops", "-falign-functions", "-qopt-matmul", "-qopt-mem-layout-trans", "-fpermissive", "-ipo-jobs4", "-Wl,--as-needed,--gc-sections,--print-gc-sections,--print-memory-usage,--relax,--stats", "-ffunction-sections", "-fdata-sections", "-diag-disable=10148,10006,10121,11021", "-par-schedule-auto", "-ipo", "-pthread", "-fPIC", "-DSVN_SQLITE_MIN_VERSION_NUMBER=3008007", "-DSVN_SQLITE_MIN_VERSION="3.8.7"", "-g", "-O2", "-fdebug-prefix-map=/home/richard/debs/svn/subversion-1.11.0=.", "-fstack-protector-strong", "-Wformat", "-Werror=format-security", "-march=native", "-pipe", "-pthread", "-Wdate-time", "-D_FORTIFY_SOURCE=2", "-DLINUX", "-D_REENTRANT", "-D_GNU_SOURCE", "-DQT_DBUS_LIB", "-DQT_GUI_LIB", "-DQT_CORE_LIB", "-c", "-fPIC", "-DPIC", "-o", "subversion/bindings/swig/python/.libs/svn_fs.o" ],
+    "objects" : [
+        {
+            "object_name" : "subversion/bindings/swig/python/.libs/svn_fs.o",
+            "source_name" : "subversion/bindings/swig/python/svn_fs.c",
+            "start_time" : "2018-12-02T22:51:23Z",
+            "end_time" : "2018-12-02T22:51:24Z"
+        }
+    ]
+}

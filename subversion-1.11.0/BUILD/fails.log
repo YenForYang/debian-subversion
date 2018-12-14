@@ -1,0 +1,5 @@
+[[[
+svn_tests: E200006: Expected error but got SVN_NO_ERROR
+FAIL:  locks-test 14: lock/unlock when 'write-lock' couldn't be obtained
+]]]
+

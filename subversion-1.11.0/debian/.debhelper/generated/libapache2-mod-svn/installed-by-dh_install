@@ -1,0 +1,11 @@
+./debian/tmp/usr/lib/apache2/modules/mod_authz_svn.so
+./debian/tmp/usr/lib/apache2/modules/mod_dav_svn.so
+debian/tmp/usr/lib/apache2/modules
+./debian/dav_svn.conf
+./debian/dav_svn.load
+./debian/authz_svn.load
+./debian/tmp/usr/lib/apache2/modules/mod_authz_svn.so
+./debian/tmp/usr/lib/apache2/modules/mod_dav_svn.so
+./debian/dav_svn.conf
+./debian/dav_svn.load
+./debian/authz_svn.load

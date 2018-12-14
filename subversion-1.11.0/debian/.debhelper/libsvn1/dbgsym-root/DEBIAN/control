@@ -1,0 +1,13 @@
+Package: libsvn1-dbgsym
+Source: subversion
+Version: 1.11.0-1
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: James McCoy <jamessan@debian.org>
+Installed-Size: 3726
+Depends: libsvn1 (= 1.11.0-1)
+Section: debug
+Priority: optional
+Multi-Arch: same
+Description: debug symbols for libsvn1
+Build-Ids: 13810e918117f10de2dc872ed9b746a2c789444b 2585d268d51844c47d4a62e435b569b848f08d52 3cace0ff693faf70967d1675264283605aefa50a 471071afae2b30e4cae008f3ebddc9967ea8c893 4a6a308877062a9f82462dbc434957f530892bd6 4dda7da92f60a2484e99fe5e152b23c856934dc7 5a955263c9a9e068800047207a7859c86d1cabe3 687f7aed0b3bb80c52f9c5532caa3fa775835b5a 6903091693d273d475280855019984e792d59da5 741479f2bd6d6ce3a40049c2256f992f4092c59d 8571fc8ee4038e048e4ab431120b605ad38922bf 8738fadf0f83feccd7f7430a75787a3e493be332 a41c547a1b858fda7789fb35fd3b32f2baffbd3e b12b095e3acc2db3144f97b7f010c29a55ba65cf ce9bca9b8754acaaa8944a679414c770e0e04313 dd7f8eb8b1ae2ae04d7e2259ff3c819aa8946533 ffa6918dbed27c52d9e344f47cb0a9236e555222

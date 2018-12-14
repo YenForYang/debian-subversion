@@ -1,0 +1,24 @@
+#!/bin/sh
+set -ex
+
+svnadmin create /var/lib/svn
+chown -R www-data: /var/lib/svn
+cat > /etc/apache2/mods-available/dav_svn.conf <<EOT
+<Location /svn>
+ DAV svn
+ SVNPath /var/lib/svn
+</Location>
+EOT
+service apache2 restart
+
+cd ${ADTTMP:-$AUTOPKGTEST_TMP}
+svn checkout http://localhost/svn
+cd svn
+echo "Hello, world!" > hello
+svn add hello
+svn commit -mdep8
+
+result=`wget -qO- http://localhost/svn/hello`
+service apache2 stop
+
+test "$result" = "Hello, world!"

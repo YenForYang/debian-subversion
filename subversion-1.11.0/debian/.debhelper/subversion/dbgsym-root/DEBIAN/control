@@ -1,0 +1,12 @@
+Package: subversion-dbgsym
+Source: subversion
+Version: 1.11.0-1
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: James McCoy <jamessan@debian.org>
+Installed-Size: 659
+Depends: subversion (= 1.11.0-1)
+Section: debug
+Priority: optional
+Description: debug symbols for subversion
+Build-Ids: 0824cb3693cbae6a2308ac01944ff4b3d68fafde 0972f8b45b84d3de09babe242b8bb3d05f2c998c 198a08a9c45b6a27912bc69dc11dc9755570943d 25efa268d0d8058229e9c348e861383ceb5f00d1 2c9b654e879b1e52818142e8b4bb4113940d03a0 7e897c72021df39494981671b5c99f8d8273c0e6 915f2ef3b61a30d009d80e018a4b8980382ae4e8 bed544f6e2cd973de04c1922de6e5a83d06f54a1 c3045f9b68a7973e776b8d949cdf9fd6b8a63da9 d0026dbbd41aeb3a355b5c506c5c1e0435477a5b d99355e37aa6a9c775344f8c3e11d5e975261844 e4fd1bf1410ac585c1b37b835130984a14cab9ca e71e0585a58f992e9f3228473c25b171ba7d183e

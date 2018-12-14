@@ -1,0 +1,224 @@
+{
+    "driver_name" : "icpc",
+    "options" : [ "-I/home/richard/debs/svn/subversion-1.11.0/subversion/include", "-I./subversion", "-I/usr/include/apr-1.0", "-I/usr/include/apr-1.0", "-I/usr/include", "-I/usr/include/libsecret-1", "-I/usr/include/glib-2.0", "-I/usr/lib/x86_64-linux-gnu/glib-2.0/include", "-I/usr/include/dbus-1.0", "-I/usr/lib/x86_64-linux-gnu/dbus-1.0/include", "-I/usr/include/x86_64-linux-gnu/qt5/QtDBus", "-I/usr/include/x86_64-linux-gnu/qt5", "-I/usr/include/x86_64-linux-gnu/qt5/QtGui", "-I/usr/include/x86_64-linux-gnu/qt5", "-I/usr/include/x86_64-linux-gnu/qt5/QtCore", "-I/usr/include/x86_64-linux-gnu/qt5", "-I/usr/include/KF5/KWallet", "-I/usr/include/KF5/KCoreAddons", "-I/usr/include/KF5/KI18n", "-I/usr/include", "-I/usr/include/serf-1", "-I/usr/lib/jvm/default-java/include", "-I/usr/lib/jvm/default-java/include", "-I/usr/lib/jvm/default-java/include/linux", "-I/home/richard/debs/svn/subversion-1.11.0/BUILD/subversion/bindings/javahl/include", "-xHost", "-parallel", "-inline-level=2", "-qemit-build-options", "-qemit-messages", "-multiple-processes=4", "-I/usr/include/x86_64-linux-gnu/c++/8", "-falign-loops", "-qopt-matmul", "-qopt-mem-layout-trans", "-fpermissive", "-ipo-jobs4", "-Wl,--as-needed,--gc-sections,--print-gc-sections,--print-memory-usage,--stats,--reduce-memory-overheads,--no-keep-memory", "-ffunction-sections", "-fdata-sections", "-diag-disable=10148,10006,10121,11021", "-par-schedule-auto", "-ipo", "-std=c++11", "-Wdate-time", "-D_FORTIFY_SOURCE=2", "-DLINUX", "-D_REENTRANT", "-D_GNU_SOURCE", "-DQT_DBUS_LIB", "-DQT_GUI_LIB", "-DQT_CORE_LIB", "-g", "-O2", "-fdebug-prefix-map=/home/richard/debs/svn/subversion-1.11.0=.", "-fstack-protector-strong", "-Wformat", "-Werror=format-security", "-march=native", "-pipe", "-g", "-O2", "-fdebug-prefix-map=/home/richard/debs/svn/subversion-1.11.0=.", "-fstack-protector-strong", "-Wformat", "-Werror=format-security", "-march=native", "-pipe", "-pthread", "-c", "-fPIC", "-DPIC", "-o", "subversion/bindings/javahl/native/jniwrapper/.libs/jni_class_cache.o" ],
+    "objects" : [
+        {
+            "object_name" : "subversion/bindings/javahl/native/jniwrapper/.libs/jni_class_cache.o",
+            "source_name" : "/home/richard/debs/svn/subversion-1.11.0/subversion/bindings/javahl/native/jniwrapper/jni_class_cache.cpp",
+            "start_time" : "2018-12-02T20:50:43Z",
+            "messages" : [
+                {
+                    "msg" : "class \"std::auto_ptr<Java::Object::ClassImpl>\" (declared at line 89 of \"\/usr\/include\/c++\/8\/backward\/auto_ptr.h\") was declared deprecated\n    JNIWRAPPER_DEFINE_CACHED_CLASS(object, Object)\n    ^",
+                    "line" : "142",
+                    "diagnostic_num" : "1478",
+                    "file" : "\/home\/richard\/debs\/svn\/subversion-1.11.0\/subversion\/bindings\/javahl\/native\/jniwrapper\/jni_class_cache.cpp",
+                    "type" : "warning"
+                },
+                {
+                    "msg" : "class \"std::auto_ptr<Java::Object::ClassImpl>\" (declared at line 89 of \"\/usr\/include\/c++\/8\/backward\/auto_ptr.h\") was declared deprecated\n    JNIWRAPPER_DEFINE_CACHED_CLASS(classtype, Class)\n    ^",
+                    "line" : "143",
+                    "diagnostic_num" : "1478",
+                    "file" : "\/home\/richard\/debs\/svn\/subversion-1.11.0\/subversion\/bindings\/javahl\/native\/jniwrapper\/jni_class_cache.cpp",
+                    "type" : "warning"
+                },
+                {
+                    "msg" : "class \"std::auto_ptr<Java::Object::ClassImpl>\" (declared at line 89 of \"\/usr\/include\/c++\/8\/backward\/auto_ptr.h\") was declared deprecated\n    JNIWRAPPER_DEFINE_CACHED_CLASS(throwable, Exception)\n    ^",
+                    "line" : "144",
+                    "diagnostic_num" : "1478",
+                    "file" : "\/home\/richard\/debs\/svn\/subversion-1.11.0\/subversion\/bindings\/javahl\/native\/jniwrapper\/jni_class_cache.cpp",
+                    "type" : "warning"
+                },
+                {
+                    "msg" : "class \"std::auto_ptr<Java::Object::ClassImpl>\" (declared at line 89 of \"\/usr\/include\/c++\/8\/backward\/auto_ptr.h\") was declared deprecated\n    JNIWRAPPER_DEFINE_CACHED_CLASS(string, String)\n    ^",
+                    "line" : "145",
+                    "diagnostic_num" : "1478",
+                    "file" : "\/home\/richard\/debs\/svn\/subversion-1.11.0\/subversion\/bindings\/javahl\/native\/jniwrapper\/jni_class_cache.cpp",
+                    "type" : "warning"
+                },
+                {
+                    "msg" : "class \"std::auto_ptr<Java::Object::ClassImpl>\" (declared at line 89 of \"\/usr\/include\/c++\/8\/backward\/auto_ptr.h\") was declared deprecated\n    JNIWRAPPER_DEFINE_CACHED_CLASS(exc_index_out_of_bounds,\n    ^",
+                    "line" : "166",
+                    "diagnostic_num" : "1478",
+                    "file" : "\/home\/richard\/debs\/svn\/subversion-1.11.0\/subversion\/bindings\/javahl\/native\/jniwrapper\/jni_class_cache.cpp",
+                    "type" : "warning"
+                },
+                {
+                    "msg" : "class \"std::auto_ptr<Java::Object::ClassImpl>\" (declared at line 89 of \"\/usr\/include\/c++\/8\/backward\/auto_ptr.h\") was declared deprecated\n    JNIWRAPPER_DEFINE_CACHED_CLASS(exc_no_such_element,\n    ^",
+                    "line" : "168",
+                    "diagnostic_num" : "1478",
+                    "file" : "\/home\/richard\/debs\/svn\/subversion-1.11.0\/subversion\/bindings\/javahl\/native\/jniwrapper\/jni_class_cache.cpp",
+                    "type" : "warning"
+                },
+                {
+                    "msg" : "class \"std::auto_ptr<Java::Object::ClassImpl>\" (declared at line 89 of \"\/usr\/include\/c++\/8\/backward\/auto_ptr.h\") was declared deprecated\n    JNIWRAPPER_DEFINE_CACHED_CLASS(iterator, BaseIterator);\n    ^",
+                    "line" : "171",
+                    "diagnostic_num" : "1478",
+                    "file" : "\/home\/richard\/debs\/svn\/subversion-1.11.0\/subversion\/bindings\/javahl\/native\/jniwrapper\/jni_class_cache.cpp",
+                    "type" : "warning"
+                },
+                {
+                    "msg" : "class \"std::auto_ptr<Java::Object::ClassImpl>\" (declared at line 89 of \"\/usr\/include\/c++\/8\/backward\/auto_ptr.h\") was declared deprecated\n    JNIWRAPPER_DEFINE_CACHED_CLASS(list, BaseImmutableList);\n    ^",
+                    "line" : "173",
+                    "diagnostic_num" : "1478",
+                    "file" : "\/home\/richard\/debs\/svn\/subversion-1.11.0\/subversion\/bindings\/javahl\/native\/jniwrapper\/jni_class_cache.cpp",
+                    "type" : "warning"
+                },
+                {
+                    "msg" : "class \"std::auto_ptr<Java::Object::ClassImpl>\" (declared at line 89 of \"\/usr\/include\/c++\/8\/backward\/auto_ptr.h\") was declared deprecated\n    JNIWRAPPER_DEFINE_CACHED_CLASS(array_list, BaseList);\n    ^",
+                    "line" : "174",
+                    "diagnostic_num" : "1478",
+                    "file" : "\/home\/richard\/debs\/svn\/subversion-1.11.0\/subversion\/bindings\/javahl\/native\/jniwrapper\/jni_class_cache.cpp",
+                    "type" : "warning"
+                },
+                {
+                    "msg" : "class \"std::auto_ptr<Java::Object::ClassImpl>\" (declared at line 89 of \"\/usr\/include\/c++\/8\/backward\/auto_ptr.h\") was declared deprecated\n    JNIWRAPPER_DEFINE_CACHED_CLASS(map, BaseImmutableMap);\n    ^",
+                    "line" : "176",
+                    "diagnostic_num" : "1478",
+                    "file" : "\/home\/richard\/debs\/svn\/subversion-1.11.0\/subversion\/bindings\/javahl\/native\/jniwrapper\/jni_class_cache.cpp",
+                    "type" : "warning"
+                },
+                {
+                    "msg" : "class \"std::auto_ptr<Java::Object::ClassImpl>\" (declared at line 89 of \"\/usr\/include\/c++\/8\/backward\/auto_ptr.h\") was declared deprecated\n    JNIWRAPPER_DEFINE_CACHED_CLASS(set, BaseImmutableMap::Set);\n    ^",
+                    "line" : "177",
+                    "diagnostic_num" : "1478",
+                    "file" : "\/home\/richard\/debs\/svn\/subversion-1.11.0\/subversion\/bindings\/javahl\/native\/jniwrapper\/jni_class_cache.cpp",
+                    "type" : "warning"
+                },
+                {
+                    "msg" : "class \"std::auto_ptr<Java::Object::ClassImpl>\" (declared at line 89 of \"\/usr\/include\/c++\/8\/backward\/auto_ptr.h\") was declared deprecated\n    JNIWRAPPER_DEFINE_CACHED_CLASS(map_entry, BaseImmutableMap::Entry);\n    ^",
+                    "line" : "178",
+                    "diagnostic_num" : "1478",
+                    "file" : "\/home\/richard\/debs\/svn\/subversion-1.11.0\/subversion\/bindings\/javahl\/native\/jniwrapper\/jni_class_cache.cpp",
+                    "type" : "warning"
+                },
+                {
+                    "msg" : "class \"std::auto_ptr<Java::Object::ClassImpl>\" (declared at line 89 of \"\/usr\/include\/c++\/8\/backward\/auto_ptr.h\") was declared deprecated\n    JNIWRAPPER_DEFINE_CACHED_CLASS(hash_map, BaseMap);\n    ^",
+                    "line" : "179",
+                    "diagnostic_num" : "1478",
+                    "file" : "\/home\/richard\/debs\/svn\/subversion-1.11.0\/subversion\/bindings\/javahl\/native\/jniwrapper\/jni_class_cache.cpp",
+                    "type" : "warning"
+                },
+                {
+                    "msg" : "class \"std::auto_ptr<Java::Object::ClassImpl>\" (declared at line 89 of \"\/usr\/include\/c++\/8\/backward\/auto_ptr.h\") was declared deprecated\n    JNIWRAPPER_DEFINE_CACHED_CLASS(input_stream, InputStream);\n    ^",
+                    "line" : "181",
+                    "diagnostic_num" : "1478",
+                    "file" : "\/home\/richard\/debs\/svn\/subversion-1.11.0\/subversion\/bindings\/javahl\/native\/jniwrapper\/jni_class_cache.cpp",
+                    "type" : "warning"
+                },
+                {
+                    "msg" : "class \"std::auto_ptr<Java::Object::ClassImpl>\" (declared at line 89 of \"\/usr\/include\/c++\/8\/backward\/auto_ptr.h\") was declared deprecated\n    JNIWRAPPER_DEFINE_CACHED_CLASS(output_stream, OutputStream);\n    ^",
+                    "line" : "182",
+                    "diagnostic_num" : "1478",
+                    "file" : "\/home\/richard\/debs\/svn\/subversion-1.11.0\/subversion\/bindings\/javahl\/native\/jniwrapper\/jni_class_cache.cpp",
+                    "type" : "warning"
+                },
+                {
+                    "msg" : "class \"std::auto_ptr<Java::Object::ClassImpl>\" (declared at line 89 of \"\/usr\/include\/c++\/8\/backward\/auto_ptr.h\") was declared deprecated\n    JNIWRAPPER_DEFINE_CACHED_CLASS(byte_buffer,\n    ^",
+                    "line" : "184",
+                    "diagnostic_num" : "1478",
+                    "file" : "\/home\/richard\/debs\/svn\/subversion-1.11.0\/subversion\/bindings\/javahl\/native\/jniwrapper\/jni_class_cache.cpp",
+                    "type" : "warning"
+                },
+                {
+                    "msg" : "class \"std::auto_ptr<Java::Object::ClassImpl>\" (declared at line 89 of \"\/usr\/include\/c++\/8\/backward\/auto_ptr.h\") was declared deprecated\n    JNIWRAPPER_DEFINE_CACHED_CLASS(subversion_exception,\n    ^",
+                    "line" : "187",
+                    "diagnostic_num" : "1478",
+                    "file" : "\/home\/richard\/debs\/svn\/subversion-1.11.0\/subversion\/bindings\/javahl\/native\/jniwrapper\/jni_class_cache.cpp",
+                    "type" : "warning"
+                },
+                {
+                    "msg" : "class \"std::auto_ptr<Java::Object::ClassImpl>\" (declared at line 89 of \"\/usr\/include\/c++\/8\/backward\/auto_ptr.h\") was declared deprecated\n    JNIWRAPPER_DEFINE_CACHED_CLASS(authn_cb,\n    ^",
+                    "line" : "190",
+                    "diagnostic_num" : "1478",
+                    "file" : "\/home\/richard\/debs\/svn\/subversion-1.11.0\/subversion\/bindings\/javahl\/native\/jniwrapper\/jni_class_cache.cpp",
+                    "type" : "warning"
+                },
+                {
+                    "msg" : "class \"std::auto_ptr<Java::Object::ClassImpl>\" (declared at line 89 of \"\/usr\/include\/c++\/8\/backward\/auto_ptr.h\") was declared deprecated\n    JNIWRAPPER_DEFINE_CACHED_CLASS(authn_result,\n    ^",
+                    "line" : "192",
+                    "diagnostic_num" : "1478",
+                    "file" : "\/home\/richard\/debs\/svn\/subversion-1.11.0\/subversion\/bindings\/javahl\/native\/jniwrapper\/jni_class_cache.cpp",
+                    "type" : "warning"
+                },
+                {
+                    "msg" : "class \"std::auto_ptr<Java::Object::ClassImpl>\" (declared at line 89 of \"\/usr\/include\/c++\/8\/backward\/auto_ptr.h\") was declared deprecated\n    JNIWRAPPER_DEFINE_CACHED_CLASS(authn_ssl_server_cert_failures,\n    ^",
+                    "line" : "194",
+                    "diagnostic_num" : "1478",
+                    "file" : "\/home\/richard\/debs\/svn\/subversion-1.11.0\/subversion\/bindings\/javahl\/native\/jniwrapper\/jni_class_cache.cpp",
+                    "type" : "warning"
+                },
+                {
+                    "msg" : "class \"std::auto_ptr<Java::Object::ClassImpl>\" (declared at line 89 of \"\/usr\/include\/c++\/8\/backward\/auto_ptr.h\") was declared deprecated\n    JNIWRAPPER_DEFINE_CACHED_CLASS(authn_ssl_server_cert_info,\n    ^",
+                    "line" : "196",
+                    "diagnostic_num" : "1478",
+                    "file" : "\/home\/richard\/debs\/svn\/subversion-1.11.0\/subversion\/bindings\/javahl\/native\/jniwrapper\/jni_class_cache.cpp",
+                    "type" : "warning"
+                },
+                {
+                    "msg" : "class \"std::auto_ptr<Java::Object::ClassImpl>\" (declared at line 89 of \"\/usr\/include\/c++\/8\/backward\/auto_ptr.h\") was declared deprecated\n    JNIWRAPPER_DEFINE_CACHED_CLASS(user_passwd_cb,\n    ^",
+                    "line" : "198",
+                    "diagnostic_num" : "1478",
+                    "file" : "\/home\/richard\/debs\/svn\/subversion-1.11.0\/subversion\/bindings\/javahl\/native\/jniwrapper\/jni_class_cache.cpp",
+                    "type" : "warning"
+                },
+                {
+                    "msg" : "class \"std::auto_ptr<Java::Object::ClassImpl>\" (declared at line 89 of \"\/usr\/include\/c++\/8\/backward\/auto_ptr.h\") was declared deprecated\n    JNIWRAPPER_DEFINE_CACHED_CLASS(credential,\n    ^",
+                    "line" : "201",
+                    "diagnostic_num" : "1478",
+                    "file" : "\/home\/richard\/debs\/svn\/subversion-1.11.0\/subversion\/bindings\/javahl\/native\/jniwrapper\/jni_class_cache.cpp",
+                    "type" : "warning"
+                },
+                {
+                    "msg" : "class \"std::auto_ptr<Java::Object::ClassImpl>\" (declared at line 89 of \"\/usr\/include\/c++\/8\/backward\/auto_ptr.h\") was declared deprecated\n    JNIWRAPPER_DEFINE_CACHED_CLASS(credential_kind,\n    ^",
+                    "line" : "203",
+                    "diagnostic_num" : "1478",
+                    "file" : "\/home\/richard\/debs\/svn\/subversion-1.11.0\/subversion\/bindings\/javahl\/native\/jniwrapper\/jni_class_cache.cpp",
+                    "type" : "warning"
+                },
+                {
+                    "msg" : "class \"std::auto_ptr<Java::Object::ClassImpl>\" (declared at line 89 of \"\/usr\/include\/c++\/8\/backward\/auto_ptr.h\") was declared deprecated\n    JNIWRAPPER_DEFINE_CACHED_CLASS(external_item,\n    ^",
+                    "line" : "206",
+                    "diagnostic_num" : "1478",
+                    "file" : "\/home\/richard\/debs\/svn\/subversion-1.11.0\/subversion\/bindings\/javahl\/native\/jniwrapper\/jni_class_cache.cpp",
+                    "type" : "warning"
+                },
+                {
+                    "msg" : "class \"std::auto_ptr<Java::Object::ClassImpl>\" (declared at line 89 of \"\/usr\/include\/c++\/8\/backward\/auto_ptr.h\") was declared deprecated\n    JNIWRAPPER_DEFINE_CACHED_CLASS(editor_provide_base_cb,\n    ^",
+                    "line" : "209",
+                    "diagnostic_num" : "1478",
+                    "file" : "\/home\/richard\/debs\/svn\/subversion-1.11.0\/subversion\/bindings\/javahl\/native\/jniwrapper\/jni_class_cache.cpp",
+                    "type" : "warning"
+                },
+                {
+                    "msg" : "class \"std::auto_ptr<Java::Object::ClassImpl>\" (declared at line 89 of \"\/usr\/include\/c++\/8\/backward\/auto_ptr.h\") was declared deprecated\n    JNIWRAPPER_DEFINE_CACHED_CLASS(editor_provide_base_cb_ret,\n    ^",
+                    "line" : "211",
+                    "diagnostic_num" : "1478",
+                    "file" : "\/home\/richard\/debs\/svn\/subversion-1.11.0\/subversion\/bindings\/javahl\/native\/jniwrapper\/jni_class_cache.cpp",
+                    "type" : "warning"
+                },
+                {
+                    "msg" : "class \"std::auto_ptr<Java::Object::ClassImpl>\" (declared at line 89 of \"\/usr\/include\/c++\/8\/backward\/auto_ptr.h\") was declared deprecated\n    JNIWRAPPER_DEFINE_CACHED_CLASS(editor_provide_props_cb,\n    ^",
+                    "line" : "213",
+                    "diagnostic_num" : "1478",
+                    "file" : "\/home\/richard\/debs\/svn\/subversion-1.11.0\/subversion\/bindings\/javahl\/native\/jniwrapper\/jni_class_cache.cpp",
+                    "type" : "warning"
+                },
+                {
+                    "msg" : "class \"std::auto_ptr<Java::Object::ClassImpl>\" (declared at line 89 of \"\/usr\/include\/c++\/8\/backward\/auto_ptr.h\") was declared deprecated\n    JNIWRAPPER_DEFINE_CACHED_CLASS(editor_provide_props_cb_ret,\n    ^",
+                    "line" : "215",
+                    "diagnostic_num" : "1478",
+                    "file" : "\/home\/richard\/debs\/svn\/subversion-1.11.0\/subversion\/bindings\/javahl\/native\/jniwrapper\/jni_class_cache.cpp",
+                    "type" : "warning"
+                },
+                {
+                    "msg" : "class \"std::auto_ptr<Java::Object::ClassImpl>\" (declared at line 89 of \"\/usr\/include\/c++\/8\/backward\/auto_ptr.h\") was declared deprecated\n    JNIWRAPPER_DEFINE_CACHED_CLASS(editor_get_kind_cb,\n    ^",
+                    "line" : "217",
+                    "diagnostic_num" : "1478",
+                    "file" : "\/home\/richard\/debs\/svn\/subversion-1.11.0\/subversion\/bindings\/javahl\/native\/jniwrapper\/jni_class_cache.cpp",
+                    "type" : "warning"
+                }
+            ],
+            "end_time" : "2018-12-02T20:50:45Z"
+        }
+    ]
+}

@@ -1,0 +1,11 @@
+./tools/examples/blame.py
+./tools/examples/check-modified.py
+./tools/examples/dumpprops.py
+./tools/examples/get-location-segments.py
+./tools/examples/getfile.py
+./tools/examples/geturl.py
+./tools/examples/putfile.py
+./tools/examples/revplist.py
+./tools/examples/svnlook.py
+./tools/examples/svnshell.py
+./tools/examples/walk-config-auth.py

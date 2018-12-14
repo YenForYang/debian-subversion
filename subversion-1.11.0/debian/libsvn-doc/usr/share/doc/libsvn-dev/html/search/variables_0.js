@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['abort_5fedit',['abort_edit',['../structsvn__delta__editor__t.html#a1200c7e8f04ef799a6eda09146311896',1,'svn_delta_editor_t']]],
+  ['abort_5freport',['abort_report',['../structsvn__ra__reporter3__t.html#a9435f4a190263c2c51dc3f04f25e4d2b',1,'svn_ra_reporter3_t::abort_report()'],['../structsvn__ra__reporter2__t.html#a852936f5a8bb4ee4d3c8189f8e7e4457',1,'svn_ra_reporter2_t::abort_report()'],['../structsvn__ra__reporter__t.html#a285d1b1517bb2909b8c78cecf56adb2f',1,'svn_ra_reporter_t::abort_report()']]],
+  ['absent',['absent',['../structsvn__wc__entry__t.html#aba25f9abc0cc4f1957886751768848f9',1,'svn_wc_entry_t']]],
+  ['absent_5fdirectory',['absent_directory',['../structsvn__delta__editor__t.html#aa426a6ce836356fd058e31ec942a26f5',1,'svn_delta_editor_t']]],
+  ['absent_5ffile',['absent_file',['../structsvn__delta__editor__t.html#aa4e0d45dca3bada7441fa92b05e6390b',1,'svn_delta_editor_t']]],
+  ['accepted_5ffailures',['accepted_failures',['../structsvn__auth__cred__ssl__server__trust__t.html#ae1ccadf10cb428b0bd70347f00076100',1,'svn_auth_cred_ssl_server_trust_t']]],
+  ['access',['access',['../structsvn__wc__conflict__description__t.html#a155edb7ffed515fc71dd72c9c7a6d2de',1,'svn_wc_conflict_description_t']]],
+  ['action',['action',['../structsvn__repos__notify__t.html#a79b6e09fa2249d98f7a603fbad2ab679',1,'svn_repos_notify_t::action()'],['../structsvn__repos__node__t.html#a7412301c1d2a82fad889cf9eefe11d2a',1,'svn_repos_node_t::action()'],['../structsvn__log__changed__path2__t.html#a249d7dd9801805bdda303aa278651acd',1,'svn_log_changed_path2_t::action()'],['../structsvn__log__changed__path__t.html#a91d3a5485918f82f89f99fe5f82ca7f3',1,'svn_log_changed_path_t::action()'],['../structsvn__wc__notify__t.html#a5eeeb245fd816ee3fa332ab8d2907b40',1,'svn_wc_notify_t::action()'],['../structsvn__wc__conflict__description2__t.html#a6d6aba989c54874f168d64975c8c4df9',1,'svn_wc_conflict_description2_t::action()'],['../structsvn__wc__conflict__description__t.html#a2eb0a7f4ad632a2d3c27432549e2cc31',1,'svn_wc_conflict_description_t::action()']]],
+  ['action_5fcode',['action_code',['../structsvn__txdelta__op__t.html#ac68cff5ee352e1343d41ee46560b8d88',1,'svn_txdelta_op_t']]],
+  ['actual_5fkind',['actual_kind',['../structsvn__wc__status3__t.html#a80baef9c21866fd4088c15fbca088424',1,'svn_wc_status3_t']]],
+  ['add_5fdirectory',['add_directory',['../structsvn__delta__editor__t.html#ae9c63bef6b9de90802287a3c2697138d',1,'svn_delta_editor_t']]],
+  ['add_5ffile',['add_file',['../structsvn__delta__editor__t.html#aa76e7e2f8a4ac090de385e08d96e3139',1,'svn_delta_editor_t']]],
+  ['aliases',['aliases',['../structsvn__opt__subcommand__desc3__t.html#a8597185d15b414f1705eec36cc9ffe51',1,'svn_opt_subcommand_desc3_t::aliases()'],['../structsvn__opt__subcommand__desc2__t.html#aabad667d8da559d8443a3ad0e5d1bff4',1,'svn_opt_subcommand_desc2_t::aliases()'],['../structsvn__opt__subcommand__desc__t.html#a2faa6747e2cc102cf4624ddaf5713ee9',1,'svn_opt_subcommand_desc_t::aliases()']]],
+  ['apply_5ftextdelta',['apply_textdelta',['../structsvn__delta__editor__t.html#a05fe224723d88caa5d8e8a2575e72e04',1,'svn_delta_editor_t::apply_textdelta()'],['../structsvn__repos__parse__fns3__t.html#a610fa48ae9035390d1a093985028498d',1,'svn_repos_parse_fns3_t::apply_textdelta()'],['../structsvn__repos__parse__fns2__t.html#afcfe9768ae71a3d2e852970bbbb958bd',1,'svn_repos_parse_fns2_t::apply_textdelta()']]],
+  ['apply_5ftextdelta_5fstream',['apply_textdelta_stream',['../structsvn__delta__editor__t.html#a168d29f50aadb716a4e3c15b57cf0245',1,'svn_delta_editor_t']]],
+  ['apr_5ferr',['apr_err',['../structsvn__error__t.html#a595d7e41f682979d66e32062c46155d9',1,'svn_error_t']]],
+  ['ascii_5fcert',['ascii_cert',['../structsvn__auth__ssl__server__cert__info__t.html#a1485385c5a42bf8b367af21533f80dca',1,'svn_auth_ssl_server_cert_info_t']]],
+  ['auth_5fbaton',['auth_baton',['../structsvn__client__ctx__t.html#adc764312fbed05b0bb6d5f91746f49a6',1,'svn_client_ctx_t::auth_baton()'],['../structsvn__ra__callbacks2__t.html#a8aac4dbf47785db0ee45b063e7d24c0d',1,'svn_ra_callbacks2_t::auth_baton()']]],
+  ['author',['author',['../structsvn__client__commit__info__t.html#a7646dd52f20884b541491549424c7e70',1,'svn_client_commit_info_t::author()'],['../structsvn__commit__info__t.html#a8f71dbec058cf0bd64864441bf3df1df',1,'svn_commit_info_t::author()']]]
+];

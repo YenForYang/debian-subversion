@@ -1,0 +1,12 @@
+./tools/examples/getlocks_test.c
+./tools/examples/headrev.c
+./tools/examples/minimal_client.c
+./tools/examples/svnput.c
+./tools/examples/svnserve-sgid.c
+./tools/examples/testwrite.c
+./tools/examples/getlocks_test.c
+./tools/examples/headrev.c
+./tools/examples/minimal_client.c
+./tools/examples/svnput.c
+./tools/examples/svnserve-sgid.c
+./tools/examples/testwrite.c

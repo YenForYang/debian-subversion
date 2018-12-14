@@ -1,0 +1,161 @@
+From: James McCoy <jamessan@debian.org>
+Date: Wed, 1 Aug 2018 20:44:36 -0400
+Subject: java10-compatibility
+
+---
+ build/ac-macros/java.m4                                      |  2 +-
+ build/generator/templates/build-outputs.mk.ezt               | 12 ++++--------
+ .../org/apache/subversion/javahl/CommitItemStateFlags.java   |  9 +++++++++
+ .../subversion/javahl/callback/UserPasswordCallback.java     |  5 +++++
+ .../src/org/apache/subversion/javahl/types/Revision.java     |  2 ++
+ 5 files changed, 21 insertions(+), 9 deletions(-)
+
+diff --git a/build/ac-macros/java.m4 b/build/ac-macros/java.m4
+index d8a7a36..9bd14d8 100644
+--- a/build/ac-macros/java.m4
++++ b/build/ac-macros/java.m4
+@@ -166,7 +166,7 @@ AC_DEFUN(SVN_FIND_JDK,
+     # The release for "-source" could actually be greater than that
+     # of "-target", if we want to cross-compile for lesser JVMs.
+     if test -z "$JAVAC_FLAGS"; then
+-      JAVAC_FLAGS="-target $JAVA_OLDEST_WORKING_VER -source 1.6"
++      JAVAC_FLAGS="--release 8"
+       if test "$enable_debugging" = "yes"; then
+         JAVAC_FLAGS="-g -Xlint -Xlint:unchecked -Xlint:serial -Xlint:path $JAVAC_FLAGS"
+         if test -z "$JAVAC_COMPAT_FLAGS"; then
+diff --git a/build/generator/templates/build-outputs.mk.ezt b/build/generator/templates/build-outputs.mk.ezt
+index 3677a6d..2b03b46 100644
+--- a/build/generator/templates/build-outputs.mk.ezt
++++ b/build/generator/templates/build-outputs.mk.ezt
+@@ -98,17 +98,13 @@ autogen-swig: autogen-swig-[swig_langs.short]
+ [for target]
+ [target.varname]_PATH = [target.path][if-any target.install]
+ install-[target.install]: [target.install_deps][end]
+-[is target.type "java"][target.varname]_HEADERS = [for target.headers][if-index target.headers first][else] [end][target.headers][end]
++[is target.type "java"]
+ [target.varname]_OBJECTS = [for target.objects][if-index target.objects first][else] [end][target.objects][end]
+-[target.varname]_DEPS = $([target.varname]_HEADERS) $([target.varname]_OBJECTS)[for target.add_deps] [target.add_deps][end][for target.deps][if-index target.deps first][else] [end][target.deps][end]
++[target.varname]_DEPS = $([target.varname]_OBJECTS)[for target.add_deps] [target.add_deps][end][for target.deps][if-index target.deps first][else] [end][target.deps][end]
+ [target.name]: $([target.varname]_DEPS)
+-[if-any target.headers][target.varname]_CLASS_FILENAMES =[for target.header_class_filenames] [target.header_class_filenames][end]
+-[target.varname]_CLASSES =[for target.header_classes] [target.header_classes][end]
+-$([target.varname]_HEADERS): $([target.varname]_CLASS_FILENAMES)
+-	[target.link_cmd] -d [target.output_dir] -classpath [target.classes]:$([target.varname]_CLASSPATH) $([target.varname]_CLASSES)
+-[end][if-any target.sources][target.varname]_SRC =[for target.sources] [target.sources][end]
++[if-any target.sources][target.varname]_SRC =[for target.sources] [target.sources][end]
+ $([target.varname]_OBJECTS): $([target.varname]_SRC)
+-	[target.link_cmd] -d [target.output_dir] -classpath [target.classes]:$([target.varname]_CLASSPATH) $([target.varname]_SRC)
++	[target.link_cmd] -h [target.output_dir]/../include/ -d [target.output_dir] -classpath [target.classes]:$([target.varname]_CLASSPATH) $([target.varname]_SRC)
+ [if-any target.jar]
+ 	$(JAR) cf [target.jar_path] -C [target.classes][for target.packages] [target.packages][end][end][end]
+ [else][is target.type "i18n"][target.varname]_DEPS =[for target.add_deps] [target.add_deps][end][for target.objects] [target.objects][end][for target.deps] [target.deps][end]
+diff --git a/subversion/bindings/javahl/src/org/apache/subversion/javahl/CommitItemStateFlags.java b/subversion/bindings/javahl/src/org/apache/subversion/javahl/CommitItemStateFlags.java
+index 6e8f593..d07452c 100644
+--- a/subversion/bindings/javahl/src/org/apache/subversion/javahl/CommitItemStateFlags.java
++++ b/subversion/bindings/javahl/src/org/apache/subversion/javahl/CommitItemStateFlags.java
+@@ -23,6 +23,8 @@
+ 
+ package org.apache.subversion.javahl;
+ 
++import java.lang.annotation.*;
++
+ /**
+  * The constants in this interface describe the changes to an item to
+  * be committed.
+@@ -32,36 +34,43 @@ public interface CommitItemStateFlags
+     /**
+      * the item has been added
+      */
++    @Native
+     public static final int Add=1;
+ 
+     /**
+      * the item has been deleted
+      */
++    @Native
+     public static final int Delete=2;
+ 
+     /**
+      * the item has text modifications
+      */
++    @Native
+     public static final int TextMods=4;
+ 
+     /**
+      * the item has property modifications
+      */
++    @Native
+     public static final int PropMods=8;
+ 
+     /**
+      * the item has been copied
+      */
++    @Native
+     public static final int IsCopy=16;
+ 
+     /**
+      * the item has a lock token
+      */
++    @Native
+     public static final int LockToken = 32;
+ 
+     /**
+      * the item was moved to this location
+      * @since 1.8
+      */
++    @Native
+     public static int MovedHere = 64;
+ }
+diff --git a/subversion/bindings/javahl/src/org/apache/subversion/javahl/callback/UserPasswordCallback.java b/subversion/bindings/javahl/src/org/apache/subversion/javahl/callback/UserPasswordCallback.java
+index a89f219..215c041 100644
+--- a/subversion/bindings/javahl/src/org/apache/subversion/javahl/callback/UserPasswordCallback.java
++++ b/subversion/bindings/javahl/src/org/apache/subversion/javahl/callback/UserPasswordCallback.java
+@@ -23,6 +23,8 @@
+ 
+ package org.apache.subversion.javahl.callback;
+ 
++import java.lang.annotation.*;
++
+ /**
+  * <p>The interface for requesting authentication credentials from the
+  * user.  Should the javahl bindings need the matching information,
+@@ -40,16 +42,19 @@ public interface UserPasswordCallback
+     /**
+      * Reject the connection to the server.
+      */
++    @Native
+     public static final int Reject = 0;
+ 
+     /**
+      * Accept the connection to the server <i>once</i>.
+      */
++    @Native
+     public static final int AcceptTemporary = 1;
+ 
+     /**
+      * Accept the connection to the server <i>forever</i>.
+      */
++    @Native
+     public static final int AcceptPermanently = 2;
+ 
+     /**
+diff --git a/subversion/bindings/javahl/src/org/apache/subversion/javahl/types/Revision.java b/subversion/bindings/javahl/src/org/apache/subversion/javahl/types/Revision.java
+index 675737d..9a80778 100644
+--- a/subversion/bindings/javahl/src/org/apache/subversion/javahl/types/Revision.java
++++ b/subversion/bindings/javahl/src/org/apache/subversion/javahl/types/Revision.java
+@@ -23,6 +23,7 @@
+ 
+ package org.apache.subversion.javahl.types;
+ 
++import java.lang.annotation.*;
+ import java.text.SimpleDateFormat;
+ import java.util.Date;
+ import java.util.Locale;
+@@ -179,6 +180,7 @@ public class Revision implements java.io.Serializable
+     /**
+      * Marker revision number for no real revision
+      */
++    @Native
+     public static final int SVN_INVALID_REVNUM = -1;
+ 
+     /**
